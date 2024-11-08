@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Tarea2-EsPrimo"/>
+        <attribute name="authors" value="RICARDOARTUROELIZALD"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-11-07 04:03:36 p. m."/>
+        <attribute name="created" value="UklDQVJET0FSVFVST0VMSVpBTEQ7UklDSEFSRDsyMDI0LTExLTA3OzAzOjUyOjQyIHAuIG0uOzM0ODQ="/>
+        <attribute name="edited" value="UklDQVJET0FSVFVST0VMSVpBTEQ7UklDSEFSRDsyMDI0LTExLTA3OzA0OjAzOjM2IHAuIG0uOzM7MzU5NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="primo" type="Integer" array="False" size=""/>
+            <input variable="primo"/>
+            <call expression="EsPrimo(primo)"/>
+        </body>
+    </function>
+    <function name="EsPrimo" type="None" variable="">
+        <parameters>
+            <parameter name="numero" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="contador, incremento" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="0"/>
+            <assign variable="incremento" expression="1"/>
+            <while expression="contador &lt; 2 || incremento &lt;= numero">
+                <if expression="numero % incremento == 0">
+                    <then>
+                        <assign variable="contador" expression="contador + 1"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="incremento" expression="incremento + 1"/>
+            </while>
+            <if expression="contador = 2">
+                <then>
+                    <output expression="&quot;El n&#250;mero &quot; &amp; numero &amp; &quot; es primo&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;El n&#250;mero &quot; &amp; numero &amp; &quot; NO es primo&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

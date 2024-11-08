@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Tarea5-DiaJuliano"/>
+        <attribute name="authors" value="RICARDOARTUROELIZALD"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-11-07 04:45:00 p. m."/>
+        <attribute name="created" value="UklDQVJET0FSVFVST0VMSVpBTEQ7UklDSEFSRDsyMDI0LTExLTA3OzA0OjEwOjA4IHAuIG0uOzM0ODE="/>
+        <attribute name="edited" value="UklDQVJET0FSVFVST0VMSVpBTEQ7UklDSEFSRDsyMDI0LTExLTA3OzA0OjQ1OjAwIHAuIG0uOzk7MzU5Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="dia, mes, anio" type="Integer" array="False" size=""/>
+            <input variable="dia"/>
+            <input variable="mes"/>
+            <input variable="anio"/>
+            <output expression="&quot;El dia juliano es: &quot; &amp; diaJuliano(dia,mes,anio)" newline="True"/>
+        </body>
+    </function>
+    <function name="diaJuliano" type="Integer" variable="diasJuliano">
+        <parameters>
+            <parameter name="dia" type="Integer" array="False"/>
+            <parameter name="mes" type="Integer" array="False"/>
+            <parameter name="anio" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="diasJuliano, m" type="Integer" array="False" size=""/>
+            <assign variable="m" expression="1"/>
+            <assign variable="diasJuliano" expression="0"/>
+            <while expression="m &lt; mes">
+                <if expression="m == 2">
+                    <then>
+                        <if expression="esBisiesto(anio)">
+                            <then>
+                                <assign variable="diasJuliano" expression="diasJuliano + 29"/>
+                            </then>
+                            <else>
+                                <assign variable="diasJuliano" expression="diasJuliano + 28"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <assign variable="diasJuliano" expression="diasJuliano + diasMes(m)"/>
+                    </else>
+                </if>
+                <assign variable="m" expression="m + 1"/>
+            </while>
+            <assign variable="diasJuliano" expression="diasJuliano + dia"/>
+        </body>
+    </function>
+    <function name="diasMes" type="Integer" variable="dias">
+        <parameters>
+            <parameter name="mes" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="dias" type="Integer" array="False" size=""/>
+            <if expression="mes == 1 || mes == 3 || mes == 5 || mes = 7 || mes == 8 || mes == 10 || mes == 12">
+                <then>
+                    <assign variable="dias" expression="31"/>
+                </then>
+                <else>
+                    <assign variable="dias" expression="30"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="esBisiesto" type="Boolean" variable="resp">
+        <parameters>
+            <parameter name="anio" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resp" type="Boolean" array="False" size=""/>
+            <if expression="anio % 4 == 0">
+                <then>
+                    <assign variable="resp" expression="true"/>
+                    <if expression="anio % 100 == 0">
+                        <then>
+                            <assign variable="resp" expression="false"/>
+                            <if expression="anio % 400 == 0">
+                                <then>
+                                    <assign variable="resp" expression="true"/>
+                                </then>
+                                <else>
+                                    <assign variable="resp" expression="false"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <assign variable="resp" expression="true"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <assign variable="resp" expression="false"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

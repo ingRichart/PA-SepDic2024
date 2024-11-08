@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Tarea4-Media"/>
+        <attribute name="authors" value="RICARDOARTUROELIZALD"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-11-07 04:09:57 p. m."/>
+        <attribute name="created" value="UklDQVJET0FSVFVST0VMSVpBTEQ7UklDSEFSRDsyMDI0LTExLTA3OzA0OjA3OjA0IHAuIG0uOzM0ODM="/>
+        <attribute name="edited" value="UklDQVJET0FSVFVST0VMSVpBTEQ7UklDSEFSRDsyMDI0LTExLTA3OzA0OjA5OjU3IHAuIG0uOzE7MzYwMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N1, N2" type="Integer" array="False" size=""/>
+            <input variable="N1"/>
+            <input variable="N2"/>
+            <output expression="&quot;La media es &quot; &amp; media(N1,N2)" newline="True"/>
+        </body>
+    </function>
+    <function name="media" type="Real" variable="resul">
+        <parameters>
+            <parameter name="num1" type="Real" array="False"/>
+            <parameter name="num2" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resul" type="Real" array="False" size=""/>
+            <assign variable="resul" expression="(num1 + num2) / 2"/>
+        </body>
+    </function>
+</flowgorithm>

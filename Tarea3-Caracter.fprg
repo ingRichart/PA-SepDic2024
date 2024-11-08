@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Tarea3-Caracter"/>
+        <attribute name="authors" value="RICARDOARTUROELIZALD"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-11-07 03:52:23 p. m."/>
+        <attribute name="created" value="UklDQVJET0FSVFVST0VMSVpBTEQ7UklDSEFSRDsyMDI0LTExLTA3OzAzOjMxOjIyIHAuIG0uOzM0Nzk="/>
+        <attribute name="edited" value="UklDQVJET0FSVFVST0VMSVpBTEQ7UklDSEFSRDsyMDI0LTExLTA3OzAzOjUyOjIzIHAuIG0uOzI7MzU5Mg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="caracter" type="String" array="False" size=""/>
+            <input variable="caracter"/>
+            <declare name="EsLetra, EsMay, EsMin" type="Boolean" array="False" size=""/>
+            <assign variable="EsLetra" expression="EsUnaLetra(caracter)"/>
+            <assign variable="EsMay" expression="EsMayu(caracter)"/>
+            <assign variable="EsMin" expression="EsMinu(caracter)"/>
+            <if expression="EsLetra">
+                <then>
+                    <output expression="&quot;Es una Letra&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;No es una Letra&quot;" newline="True"/>
+                </else>
+            </if>
+            <if expression="EsMay">
+                <then>
+                    <output expression="&quot;Es may&#250;scula&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;No es may&#250;scula&quot;" newline="True"/>
+                </else>
+            </if>
+            <if expression="EsMin">
+                <then>
+                    <output expression="&quot;Es min&#250;scula&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;No es min&#250;scula&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="EsUnaLetra" type="Boolean" variable="respuesta">
+        <parameters>
+            <parameter name="letra" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="respuesta" type="Boolean" array="False" size=""/>
+            <if expression="(letra &gt;= &quot;A&quot; &amp;&amp; letra &lt;= &quot;Z&quot;) || (letra &gt;= &quot;a&quot; &amp;&amp; letra &lt;= &quot;z&quot;)">
+                <then>
+                    <assign variable="respuesta" expression="True"/>
+                </then>
+                <else>
+                    <assign variable="respuesta" expression="false"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="EsMayu" type="Boolean" variable="resultado">
+        <parameters>
+            <parameter name="letra" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resultado" type="Boolean" array="False" size=""/>
+            <if expression="(letra &gt;= &quot;A&quot; &amp;&amp; letra &lt;= &quot;Z&quot;)">
+                <then>
+                    <assign variable="resultado" expression="true"/>
+                </then>
+                <else>
+                    <assign variable="resultado" expression="false"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="EsMinu" type="Boolean" variable="resultado">
+        <parameters>
+            <parameter name="letra" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resultado" type="Boolean" array="False" size=""/>
+            <if expression="(letra &gt;= &quot;a&quot; &amp;&amp; letra &lt;= &quot;z&quot;)">
+                <then>
+                    <assign variable="resultado" expression="true"/>
+                </then>
+                <else>
+                    <assign variable="resultado" expression="false"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
